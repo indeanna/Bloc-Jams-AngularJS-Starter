@@ -11,9 +11,15 @@
           url: "/",
           templateUrl: "/templates/landing.html"
         })
+
         .state("album", {
           url: "/";
           templateURL: "/templates/album.html"
+        })
+
+        .state("collection", {
+          url: "/";
+          templateURL: "/templates/collection.html"
         });
 }
 
