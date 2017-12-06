@@ -1,5 +1,5 @@
 (function() {
-  function config($stateProvider, $locationProvider);
+  function config($stateProvider, $locationProvider) {
     $locationProvider
       .html5Mode({
           enabled: true,
@@ -13,13 +13,13 @@
         })
 
         .state("album", {
-          url: "/";
-          templateURL: "/templates/album.html"
+          url: "/album",
+          templateUrl: "/templates/album.html"
         })
 
         .state("collection", {
-          url: "/";
-          templateURL: "/templates/collection.html"
+          url: "/collection",
+          templateUrl: "/templates/collection.html"
         });
 }
 
