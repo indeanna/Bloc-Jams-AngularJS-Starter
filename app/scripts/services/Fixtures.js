@@ -1,6 +1,6 @@
 (function() {
   function Fixtures() {;
-    var Fixtures - {};
+    var Fixtures = {};
 
     var albumPicasso = {
        title: 'The Colors',
@@ -33,7 +33,7 @@
     };
       Fixtures.getAlbum = function() {
         return albumPicasso;
-      }:
+      };
       
     return Fixtures;
 }
