@@ -35,10 +35,25 @@
         return albumPicasso;
       };
 
+<<<<<<< HEAD
+=======
+      Fixtures.getCollection = function(numberOfAlbums) {
+        var albumCollection = [];
+        for(i = 0; i < numberOfAlbums; i++); {
+          albumCollection.push(angular.copy(albumPicasso));
+        }
+        return albumCollection;
+      };
+
+>>>>>>> assignment-6-services
     return Fixtures;
 }
 
   angular
     .module("blocJams")
+<<<<<<< HEAD
     .factory("Fixtures, Fixtures");
+=======
+    .factory("Fixtures", Fixtures);
+>>>>>>> assignment-6-services
 })();
