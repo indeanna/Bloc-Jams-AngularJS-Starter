@@ -25,12 +25,23 @@
     });
       currentSong = song;
     };
+/*@function playSong
+  @desc Plays current song and set song.playing to true.
+  @parm {object} song
+*/
+    var playSong =function (song) {
+      currentBuzzObject.play();
+      song.playing = true;
+    };
 
+  /*@function SongPlayer.play
+    @desc pLays currrent song if paused, or plays clicked song.
+    @parm {object} song
+  */
     SongPlayer.play = function(song) {
       if(currentSong !== song) {
         setSong(song);
-        currentBuzzObject.play();
-        song.playing = true;
+        playSong(song);
 
       } else if (currentSong === song) {
           if(currentBuzzObject.isPaused());
@@ -38,6 +49,11 @@
           }
       };
 
+
+  /*@function SongPlayer.pause
+    @desc Pauses current song.
+    @parm {object} song
+  */
     SongPlayer.pause = function(song) {
         currentBuzzObject.pause();
         song.playing = false;
