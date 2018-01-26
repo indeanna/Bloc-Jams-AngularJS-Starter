@@ -27,6 +27,12 @@
         $rootScope.$apply(function() {
           SongPlayer.currentTime = currentBuzzObject.getTime();
         });
+
+      currentBuzzObject.bind('volumeupdate', function() {
+        $rootScope.$apply(function() {
+          SongPlayer.volume = currentBuzzObject.setVolume();
+          })
+        });
       });
     SongPlayer.currentSong = song;
     };
@@ -61,6 +67,10 @@
     /*@desc Current playback time (in seconds) of currently playing song
       @type {number} */
     SongPlayer.currentTime = null;
+
+    /*@desc Current volume in %
+      @type {number}*/
+    SongPlayer.volume = null;
 
   /*@function SongPlayer.play
     @desc pLays currrent song if paused, or plays clicked song.
@@ -115,11 +125,19 @@
       }
      }
      /*@function setCurrentTime
-       @desc Set current time (in seconds) of surrently playing song
+       @desc Set current time (in seconds) of currently playing song
        @parm {number} time*/
      SongPlayer.setCurrentTime = function(time) {
        if (currentBuzzObject) {
          currentBuzzObject.setTime(time);
+       }
+     };
+     /*@function setCurrentVolume
+       @desc Set current volume in %
+       @parm {number} volume*/
+     SongPlayer.setVolume = function(volume) {
+       if (currentBuzzObject) {
+          currentBuzzObject.setVolume(volume);
        }
      };
     };
